@@ -1,0 +1,13 @@
+name = "Hermes"
+uuid = "7036c0ce-ac8c-47e3-b4a6-350497d2c7d4"
+authors = ["Stefan Bringuier <stefanbringuier@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.8"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
