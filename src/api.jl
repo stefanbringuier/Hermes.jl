@@ -4,6 +4,7 @@ using OpenAI
 using Dates
 
 using ..Hermes: OPENAI, INSTRUCT
+using ..Hermes: add_code_block
 
 export HERMES_HISTORY
 export @hermes, @hermes_str
