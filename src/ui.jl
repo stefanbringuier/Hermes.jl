@@ -17,7 +17,7 @@ function settings_widget()
             md"""
             OpenAI API Key: $(Child("apikey",PasswordField()))
 
-            Model: $(Child("model",Select($(MODELS))))
+            Model: $(Child("model",Select(MODELS)))
             """
         end
     )
