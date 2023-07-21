@@ -2,8 +2,8 @@ module Hermes
 using Reexport
 
 include("instruct.jl")
-include("api.jl")
 include("ui.jl")
+include("api.jl")
 include("display.jl")
 include("utils.jl")
 
