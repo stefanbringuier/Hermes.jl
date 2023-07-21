@@ -3,37 +3,12 @@ module api
 using OpenAI
 using Dates
 
+using ..Hermes: OPENAI, INSTRUCT
 
 export HERMES_HISTORY
 export @hermes, @hermes_str
 export @hermes_exe, @hermes_exe_str
 
-using PlutoUI
-using PlutoUI.BuiltinsNotebook: @bind
-using Markdown
-
-export OPENAI
-export @set_openai
-export settings_widget
-
-
-const MODELS = ["gpt-3.5-turbo","gpt-3.5-turbo-16k","gpt-4","gpt-4-32k"]
-
-macro set_openai(apikey::String,model::String)
-    return esc(:(global OPENAI = (apikey=$(apikey),model=$(model))))
-end
-
-function settings_widget()
-    @bind OPENAI confirm(
-        PlutoUI.combine() do Child
-            md"""
-            OpenAI API Key: $(Child("apikey",PasswordField()))
-
-            Model: $(Child("model",Select(MODELS)))
-            """
-        end
-    )
-end
 
 struct HermesCode
     str::String
@@ -52,7 +27,6 @@ const HERMES_HISTORY = Dict{String, HermesCode}();
 macro hermes_str(prompt)
 	apikey = OPENAI[1]
 	model = OPENAI[2]
-	@show apikey
 	if !isempty(apikey)
 		result = create_chat(
 	    	apikey, 
