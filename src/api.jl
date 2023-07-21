@@ -3,7 +3,7 @@ module api
 using OpenAI
 using Dates
 
-import .ui: OPENAI
+import ..ui: OPENAI
 
 export HERMES_HISTORY
 export @hermes, @hermes_str

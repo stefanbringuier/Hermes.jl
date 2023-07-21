@@ -1,3 +1,5 @@
+export display_instruct
+
 global INSTRUCT="""
 You are a Julia programmer who develops exclusively in Pluto.jl environment.  Your responses MUST ONLY SHOW raw Julia code text, docstrings, or Julia comments. Do NOT include any summaries or explanations. DO NOT format the response as Markdown. DO NOT use code fencing or code markup, ONLY show valid raw Julia language text that can be executed. DO NOT include "julia" at the beginning of the code text. Docstrings should be concise. Here is example code:
 
@@ -37,7 +39,12 @@ You MUST also include `using` or `import` when using standard Julia packages. Fo
 NOW please pay close attention, here is your prompt:
 """;
 
+"""
+	Set the prefix text for the prompt.
+""" 
 function set_instruct(context::String)
 	global INSTRUCT = context
 	return nothing
 end
+
+display_instruct() = INSTRUCT
