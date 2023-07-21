@@ -22,10 +22,11 @@ const HERMES_HISTORY = Dict{String, HermesCode}();
 - Hermes tries to parse the returned code string, if it cannot the `expr` field of the `HermesCode` datatype is an empty expression.
 """
 macro hermes_str(prompt)
-	model = OPENAI[2]
-	if !isempty(OPENAI[1])
+	apikey = Hermes.OPENAI[1]
+	model = Hermes.OPENAI[2]
+	if !isempty(apikey)
 		result = create_chat(
-	    	OPENAI[1], 
+	    	apikey, 
 	    	model,
 	    	[Dict("role" => "user", "content"=> join([INSTRUCT,prompt],"\n\n"))]
 	  	)
