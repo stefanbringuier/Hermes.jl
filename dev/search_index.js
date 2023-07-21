@@ -1,0 +1,3 @@
+var documenterSearchIndex = {"docs":
+[{"location":"","page":"Home","title":"Home","text":"CurrentModule = Hermes","category":"page"},{"location":"#Hermes","page":"Home","title":"Hermes","text":"","category":"section"},{"location":"","page":"Home","title":"Home","text":"Documentation for Hermes.","category":"page"},{"location":"","page":"Home","title":"Home","text":"","category":"page"},{"location":"","page":"Home","title":"Home","text":"Modules = [Hermes]","category":"page"},{"location":"#Hermes.set_instruct-Tuple{String}","page":"Home","title":"Hermes.set_instruct","text":"Set the prefix text for the prompt.\n\n\n\n\n\n","category":"method"}]
+}
