@@ -15,8 +15,24 @@ global OPENAI = (apikey="", model="")
 macro set_openai(apikey::String,model::String)
     return eval(:(global OPENAI = (apikey=$(apikey),model=$(model))))
 end
-
 function settings_widget()
+    @bind apikey PasswordField()
+    @bind model Select(MODELS)
+    
+    @set_openai apikey model
+
+    confirm(
+        PlutoUI.combine() do Child
+            md"""
+            OpenAI API Key: $(Child("apikey", apikey))
+
+            Model: $(Child("model", model))
+            """
+        end
+    )
+end
+
+#= function settings_widget()
     @bind OPENAI confirm(
         PlutoUI.combine() do Child
             md"""
@@ -26,6 +42,6 @@ function settings_widget()
             """
         end
     )
-end
+end =#
 
 #end
