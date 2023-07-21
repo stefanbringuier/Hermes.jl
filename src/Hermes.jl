@@ -7,6 +7,7 @@ include("api.jl")
 include("display.jl")
 include("utils.jl")
 
+global OPENAI = (apikey="",model="")
 @reexport using .ui
 @reexport using .api
 
