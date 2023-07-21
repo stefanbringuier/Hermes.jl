@@ -3,6 +3,7 @@ using PlutoUI
 using PlutoUI.BuiltinsNotebook: @bind
 using Markdown
 
+export OPENAI
 export @set_openai
 export settings_widget
 
