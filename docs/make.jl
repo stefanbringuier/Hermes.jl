@@ -15,10 +15,16 @@ makedocs(;
         assets=String[],
     ),
     pages=[
-        #"Home" => "index.md",
-        "Home" => "resources/HermesNotebookRecording.html"
+        "Home" => "index.md",
     ],
 )
+
+ExampleFile = "resources/HermesNotebookRecording.html"
+# Temporary work over to make example recording default index
+html_path = joinpath(@__DIR__, ExampleFile)
+index_path = joinpath(@__DIR__, "build", "index.html")
+# Overwrite the index.html file with your specific HTML file
+cp(html_path, index_path, force=true)
 
 deploydocs(;
     repo="github.com/stefanbringuier/Hermes.jl",
