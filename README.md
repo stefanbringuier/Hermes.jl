@@ -9,6 +9,9 @@
 Pluto was the god of the underworld and Hermes was the messenger amongst gods who brought Pluto the unfortunate souls.
 
 ## Usage
+[Example Notebook](notebooks/HermesNotebook.jl)
+
+<iframe src="resources/HermesNotebookRecording.html" frameborder="0" allowfullscreen></iframe>
 
 ## Vision
 The current implementation only provides returned messages within the executed cell. The returned messages can be either shown as formatted text (`@hermes`) or executed (`@hermes_exe`), but these are tied toth e runtime Pluto cell. What would be ideal is some javascript that would enable the macro calls to place markdown or julia code in a cell below the cell that makes the call request.
