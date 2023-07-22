@@ -12,7 +12,7 @@ Base.show(io::IO, ::MIME"text/html", h::HermesCode) = begin
 			<pre id='codeblock'>
 		  		<code class="language-julia">$(h.str)</code>
 		  	</pre>
-  			<button style='position: absolute; top: 15px; right: 20px; border: none; background-color: transparent; cursor: pointer; font-size: 1.2em;' onclick='window.copyToClipboard("$(escape_string(h.str))", this)'>ðŸ“‹</button>
+  			<button style='position: absolute; top: 15px; right: 20px; border: none; background-color: transparent; cursor: pointer; font-size: 1.2em;' onclick='window.copyToClipboard("$(escape_string(h.str))", this)'>📋</button>
 		</div>
 		<script 	src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js">
 		hljs.highlightAll();
@@ -26,7 +26,7 @@ Base.show(io::IO, ::MIME"text/html", h::HermesCode) = begin
     	document.execCommand("copy");
     	document.body.removeChild(dummy);
     	element.innerText = "Copied!";  // Change button text after copying
-    	setTimeout(function(){ element.innerText = "ðŸ“‹"; }, 2000); // Change back to icon after 2 seconds
+    	setTimeout(function(){ element.innerText = "📋"; }, 2000); // Change back to icon after 2 seconds
 		}
 		</script>
 		""")
