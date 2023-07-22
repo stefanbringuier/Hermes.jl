@@ -10,5 +10,5 @@ Documentation for [Hermes](https://github.com/stefanbringuier/Hermes.jl).
 ```
 
 ```@autodocs
-Modules = [Hermes]
+Modules = [Hermes,api]
 ```
